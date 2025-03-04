@@ -1,0 +1,464 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title> System Code</title><meta content="width=device-width,initial-scale=1.0" name=viewport><link href=https://cestef.github.io/yctf.ch/css/main.css rel=stylesheet><script crossorigin src=https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js></script><script crossorigin src=https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.basic.min.js></script><script defer src=https://cestef.github.io/yctf.ch/js/main.js></script><script defer src=https://cestef.github.io/yctf.ch/search_index.en.js></script><body class=min-h-[100svh]><div class="w-[50svw] md:w-96 bg-popover absolute left-1/2 top-1/3 transform -translate-x-1/2 -translate-y-1/2 hidden shadow-lg" id=goto-popup><input class="w-full h-8 lg:h-12 px-2 py-1 lg:px-4 lg:py-2" id=goto-input placeholder=Search><div class="w-full h-0.5 bg-muted"></div><div class="w-full max-h-96 overflow-y-auto flex flex-col" id=goto-results></div></div><a class="top-0 left-0 fixed" href=/> <picture><source media="(prefers-color-scheme: dark)" srcset=https://cestef.github.io/yctf.ch/images/logo_dark.png><img class="h-18 md:h-26 p-2 md:p-4" alt=logo src=https://cestef.github.io/yctf.ch/images/logo_light.png></picture> </a><div class="text-secondary-foreground px-12 md:py-2 py-1 font-black text-lg lg:text-xl top-0 right-0 fixed w-18 md:w-26 h-18 md:h-26 p-2 md:p-4 text-center flex items-center justify-center"></div><main id=scroll-element><div class="mt-18 lg:mt-24 mx-4 mb-24 sm:mx-0"><article class="prose dark:prose-invert mx-auto lg:prose-lg"><h1>System Code <span class="text-muted-foreground text-xl">by mango, cstef, Tyr</span></h1><div class="flex flex-row gap-4 items-center"><span><strong>2024-09-30</strong></span><span class=text-muted-foreground>(1 min. read)</span> - <span class="flex flex-row gap-2"> <a class="bg-accent text-accent-foreground px-2 py-1 rounded-md text-sm w-fit font-bold no-underline" href=/misc> misc </a> </span><div class=flex-grow></div></div><h2 id=description>Description</h2><p>Follow the white rabbit.<p>NOTE: Bruteforce is permitted for this challenge instance if you feel it is necessary.<p>Press the Start button on the top-right to begin this challenge.<hr><p>What we tried:<ul><li>Enum on <code>/</code> and <code>/enter=</code> with <code>gobuster</code> and custom + <code>rockyou.txt</code> wordlists<li>Bruteforce on <code>/enter=</code> with <code>ffuf</code> and custom + <code>rockyou.txt</code><li>Recon using <code>finalrecon</code> - Header inspection - DNS records - WHOIS - URLs inside js/sitemap - Images<li>Looking through library assets, they all match the original</ul><h2 id=matrix-library-diffing-with-original-source>Matrix library diffing with original source</h2><pre class=z-code><code><span class="z-text z-plain">diff -bur ../../matrix-code-github/js/config.js ./config.js
+</span><span class="z-text z-plain">--- ../../matrix-code-github/js/config.js	2024-10-08 14:28:11.071705089 +0200
+</span><span class="z-text z-plain">+++ ./config.js	2024-10-08 19:00:47.525132778 +0200
+</span><span class="z-text z-plain">@@ -124,6 +124,7 @@
+</span><span class="z-text z-plain"> 	useHalfFloat: false,
+</span><span class="z-text z-plain"> 	renderer: "regl", // The preferred web graphics API
+</span><span class="z-text z-plain"> 	suppressWarnings: false, // Whether to show warnings to visitors on load
+</span><span class="z-text z-plain">+  backupGlyphsTwr: ["a", "b", "c", "d", "e", "f"], // The characters to fallback to if glyphs fail to load
+</span><span class="z-text z-plain"> 	isometric: false,
+</span><span class="z-text z-plain"> 	useHoloplay: false,
+</span><span class="z-text z-plain"> 	loops: false,
+</span><span class="z-text z-plain">@@ -132,138 +133,7 @@
+</span><span class="z-text z-plain"> };
+</span><span class="z-text z-plain"> 
+</span><span class="z-text z-plain"> const versions = {
+</span><span class="z-text z-plain">-	classic: {},
+</span><span class="z-text z-plain">-	megacity: {
+</span><span class="z-text z-plain">-		font: "megacity",
+</span><span class="z-text z-plain">-		animationSpeed: 0.5,
+</span><span class="z-text z-plain">-		numColumns: 40,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	neomatrixology: {
+</span><span class="z-text z-plain">-		font: "neomatrixology",
+</span><span class="z-text z-plain">-		animationSpeed: 0.8,
+</span><span class="z-text z-plain">-		numColumns: 40,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 0.9, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 0.9, 0.2), at: 0.2 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 0.9, 0.7), at: 0.7 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 0.9, 0.8), at: 0.8 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.167, 1, 0.75),
+</span><span class="z-text z-plain">-		cursorIntensity: 2,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	operator: {
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.375, 1, 0.66),
+</span><span class="z-text z-plain">-		cursorIntensity: 3,
+</span><span class="z-text z-plain">-		bloomSize: 0.6,
+</span><span class="z-text z-plain">-		bloomStrength: 0.75,
+</span><span class="z-text z-plain">-		highPassThreshold: 0.0,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.01,
+</span><span class="z-text z-plain">-		cycleFrameSkip: 8,
+</span><span class="z-text z-plain">-		brightnessOverride: 0.22,
+</span><span class="z-text z-plain">-		brightnessThreshold: 0,
+</span><span class="z-text z-plain">-		fallSpeed: 0.6,
+</span><span class="z-text z-plain">-		glyphEdgeCrop: 0.15,
+</span><span class="z-text z-plain">-		glyphHeightToWidth: 1.35,
+</span><span class="z-text z-plain">-		rippleTypeName: "box",
+</span><span class="z-text z-plain">-		numColumns: 108,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.4, 0.8, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.4, 0.8, 0.5), at: 0.5 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.4, 0.8, 1.0), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		raindropLength: 1.5,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	nightmare: {
+</span><span class="z-text z-plain">-		font: "gothic",
+</span><span class="z-text z-plain">-		isolateCursor: false,
+</span><span class="z-text z-plain">-		highPassThreshold: 0.7,
+</span><span class="z-text z-plain">-		baseBrightness: -0.8,
+</span><span class="z-text z-plain">-		brightnessDecay: 0.75,
+</span><span class="z-text z-plain">-		fallSpeed: 1.2,
+</span><span class="z-text z-plain">-		hasThunder: true,
+</span><span class="z-text z-plain">-		numColumns: 60,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.35,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.0, 1.0, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.0, 1.0, 0.2), at: 0.2 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.0, 1.0, 0.4), at: 0.4 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.1, 1.0, 0.7), at: 0.7 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.2, 1.0, 1.0), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		raindropLength: 0.5,
+</span><span class="z-text z-plain">-		slant: (22.5 * Math.PI) / 180,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	paradise: {
+</span><span class="z-text z-plain">-		font: "coptic",
+</span><span class="z-text z-plain">-		isolateCursor: false,
+</span><span class="z-text z-plain">-		bloomStrength: 1,
+</span><span class="z-text z-plain">-		highPassThreshold: 0,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.005,
+</span><span class="z-text z-plain">-		baseBrightness: -1.3,
+</span><span class="z-text z-plain">-		baseContrast: 2,
+</span><span class="z-text z-plain">-		brightnessDecay: 0.05,
+</span><span class="z-text z-plain">-		fallSpeed: 0.02,
+</span><span class="z-text z-plain">-		isPolar: true,
+</span><span class="z-text z-plain">-		rippleTypeName: "circle",
+</span><span class="z-text z-plain">-		rippleSpeed: 0.1,
+</span><span class="z-text z-plain">-		numColumns: 40,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.0, 0.0, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.0, 0.8, 0.3), at: 0.3 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.1, 0.8, 0.5), at: 0.5 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.1, 1.0, 0.6), at: 0.6 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.1, 1.0, 0.9), at: 0.9 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		raindropLength: 0.4,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	resurrections: {
+</span><span class="z-text z-plain">-		font: "resurrections",
+</span><span class="z-text z-plain">-		glyphEdgeCrop: 0.1,
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.292, 1, 0.8),
+</span><span class="z-text z-plain">-		cursorIntensity: 2,
+</span><span class="z-text z-plain">-		baseBrightness: -0.7,
+</span><span class="z-text z-plain">-		baseContrast: 1.17,
+</span><span class="z-text z-plain">-		highPassThreshold: 0,
+</span><span class="z-text z-plain">-		numColumns: 70,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.03,
+</span><span class="z-text z-plain">-		bloomStrength: 0.7,
+</span><span class="z-text z-plain">-		fallSpeed: 0.3,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.375, 0.9, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.375, 1.0, 0.6), at: 0.92 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.375, 1.0, 1.0), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	trinity: {
+</span><span class="z-text z-plain">-		font: "resurrections",
+</span><span class="z-text z-plain">-		glintTexture: "metal",
+</span><span class="z-text z-plain">-		baseTexture: "pixels",
+</span><span class="z-text z-plain">-		glyphEdgeCrop: 0.1,
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.292, 1, 0.8),
+</span><span class="z-text z-plain">-		cursorIntensity: 2,
+</span><span class="z-text z-plain">-		isolateGlint: true,
+</span><span class="z-text z-plain">-		glintColor: hsl(0.131, 1, 0.6),
+</span><span class="z-text z-plain">-		glintIntensity: 3,
+</span><span class="z-text z-plain">-		glintBrightness: -0.5,
+</span><span class="z-text z-plain">-		glintContrast: 1.5,
+</span><span class="z-text z-plain">-		baseBrightness: -0.4,
+</span><span class="z-text z-plain">-		baseContrast: 1.5,
+</span><span class="z-text z-plain">-		highPassThreshold: 0,
+</span><span class="z-text z-plain">-		numColumns: 60,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.03,
+</span><span class="z-text z-plain">-		bloomStrength: 0.7,
+</span><span class="z-text z-plain">-		fallSpeed: 0.3,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.37, 0.6, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.37, 0.6, 0.5), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		cycleSpeed: 0.01,
+</span><span class="z-text z-plain">-		volumetric: true,
+</span><span class="z-text z-plain">-		forwardSpeed: 0.2,
+</span><span class="z-text z-plain">-		raindropLength: 0.3,
+</span><span class="z-text z-plain">-		density: 0.75,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	morpheus: {
+</span><span class="z-text z-plain">+  classic: {
+</span><span class="z-text z-plain"> 		font: "resurrections",
+</span><span class="z-text z-plain"> 		glintTexture: "mesh",
+</span><span class="z-text z-plain"> 		baseTexture: "metal",
+</span><span class="z-text z-plain">@@ -283,8 +153,8 @@
+</span><span class="z-text z-plain"> 		bloomStrength: 0.7,
+</span><span class="z-text z-plain"> 		fallSpeed: 0.3,
+</span><span class="z-text z-plain"> 		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.97, 0.6, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.97, 0.6, 0.5), at: 1.0 },
+</span><span class="z-text z-plain">+      { color: hsl(0.51, 0.74, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">+      { color: hsl(0.51, 0.74, 0.5), at: 1.0 },
+</span><span class="z-text z-plain"> 		],
+</span><span class="z-text z-plain"> 		cycleSpeed: 0.015,
+</span><span class="z-text z-plain"> 		volumetric: true,
+</span><span class="z-text z-plain">@@ -292,109 +162,6 @@
+</span><span class="z-text z-plain"> 		raindropLength: 0.4,
+</span><span class="z-text z-plain"> 		density: 0.75,
+</span><span class="z-text z-plain"> 	},
+</span><span class="z-text z-plain">-	bugs: {
+</span><span class="z-text z-plain">-		font: "resurrections",
+</span><span class="z-text z-plain">-		glintTexture: "sand",
+</span><span class="z-text z-plain">-		baseTexture: "metal",
+</span><span class="z-text z-plain">-		glyphEdgeCrop: 0.1,
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.619, 1, 0.65),
+</span><span class="z-text z-plain">-		cursorIntensity: 2,
+</span><span class="z-text z-plain">-		isolateGlint: true,
+</span><span class="z-text z-plain">-		glintColor: hsl(0.625, 1, 0.6),
+</span><span class="z-text z-plain">-		glintIntensity: 3,
+</span><span class="z-text z-plain">-		glintBrightness: -1,
+</span><span class="z-text z-plain">-		glintContrast: 3,
+</span><span class="z-text z-plain">-		baseBrightness: -0.3,
+</span><span class="z-text z-plain">-		baseContrast: 1.5,
+</span><span class="z-text z-plain">-		highPassThreshold: 0,
+</span><span class="z-text z-plain">-		numColumns: 60,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.03,
+</span><span class="z-text z-plain">-		bloomStrength: 0.7,
+</span><span class="z-text z-plain">-		fallSpeed: 0.3,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.12, 0.6, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.14, 0.6, 0.5), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		cycleSpeed: 0.01,
+</span><span class="z-text z-plain">-		volumetric: true,
+</span><span class="z-text z-plain">-		forwardSpeed: 0.4,
+</span><span class="z-text z-plain">-		raindropLength: 0.3,
+</span><span class="z-text z-plain">-		density: 0.75,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	palimpsest: {
+</span><span class="z-text z-plain">-		font: "huberfishA",
+</span><span class="z-text z-plain">-		isolateCursor: false,
+</span><span class="z-text z-plain">-		bloomStrength: 0.2,
+</span><span class="z-text z-plain">-		numColumns: 40,
+</span><span class="z-text z-plain">-		raindropLength: 1.2,
+</span><span class="z-text z-plain">-		cycleFrameSkip: 3,
+</span><span class="z-text z-plain">-		fallSpeed: 0.5,
+</span><span class="z-text z-plain">-		slant: Math.PI * -0.0625,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 0.25, 0.9), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.6, 0.8, 0.1), at: 0.4 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	twilight: {
+</span><span class="z-text z-plain">-		font: "huberfishD",
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.167, 1, 0.8),
+</span><span class="z-text z-plain">-		cursorIntensity: 1.5,
+</span><span class="z-text z-plain">-		bloomStrength: 0.1,
+</span><span class="z-text z-plain">-		numColumns: 50,
+</span><span class="z-text z-plain">-		raindropLength: 0.9,
+</span><span class="z-text z-plain">-		fallSpeed: 0.1,
+</span><span class="z-text z-plain">-		highPassThreshold: 0.0,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.6, 1.0, 0.05), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.6, 0.8, 0.1), at: 0.1 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.88, 0.8, 0.5), at: 0.5 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.15, 1.0, 0.6), at: 0.8 },
+</span><span class="z-text z-plain">-			// { color: hsl(0.1, 1.0, 0.9), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	holoplay: {
+</span><span class="z-text z-plain">-		font: "resurrections",
+</span><span class="z-text z-plain">-		glintTexture: "metal",
+</span><span class="z-text z-plain">-		glyphEdgeCrop: 0.1,
+</span><span class="z-text z-plain">-		cursorColor: hsl(0.292, 1, 0.8),
+</span><span class="z-text z-plain">-		cursorIntensity: 2,
+</span><span class="z-text z-plain">-		isolateGlint: true,
+</span><span class="z-text z-plain">-		glintColor: hsl(0.131, 1, 0.6),
+</span><span class="z-text z-plain">-		glintIntensity: 3,
+</span><span class="z-text z-plain">-		glintBrightness: -0.5,
+</span><span class="z-text z-plain">-		glintContrast: 1.5,
+</span><span class="z-text z-plain">-		baseBrightness: -0.4,
+</span><span class="z-text z-plain">-		baseContrast: 1.5,
+</span><span class="z-text z-plain">-		highPassThreshold: 0,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.03,
+</span><span class="z-text z-plain">-		bloomStrength: 0.7,
+</span><span class="z-text z-plain">-		fallSpeed: 0.3,
+</span><span class="z-text z-plain">-		palette: [
+</span><span class="z-text z-plain">-			{ color: hsl(0.37, 0.6, 0.0), at: 0.0 },
+</span><span class="z-text z-plain">-			{ color: hsl(0.37, 0.6, 0.5), at: 1.0 },
+</span><span class="z-text z-plain">-		],
+</span><span class="z-text z-plain">-		cycleSpeed: 0.01,
+</span><span class="z-text z-plain">-		raindropLength: 0.3,
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-		renderer: "regl",
+</span><span class="z-text z-plain">-		numColumns: 20,
+</span><span class="z-text z-plain">-		ditherMagnitude: 0,
+</span><span class="z-text z-plain">-		bloomStrength: 0,
+</span><span class="z-text z-plain">-		volumetric: true,
+</span><span class="z-text z-plain">-		forwardSpeed: 0,
+</span><span class="z-text z-plain">-		density: 3,
+</span><span class="z-text z-plain">-		useHoloplay: true,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	["3d"]: {
+</span><span class="z-text z-plain">-		volumetric: true,
+</span><span class="z-text z-plain">-		fallSpeed: 0.5,
+</span><span class="z-text z-plain">-		cycleSpeed: 0.03,
+</span><span class="z-text z-plain">-		baseBrightness: -0.9,
+</span><span class="z-text z-plain">-		baseContrast: 1.5,
+</span><span class="z-text z-plain">-		raindropLength: 0.3,
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain"> };
+</span><span class="z-text z-plain"> versions.throwback = versions.operator;
+</span><span class="z-text z-plain"> versions.updated = versions.resurrections;
+</span><span class="z-text z-plain">@@ -402,171 +169,34 @@
+</span><span class="z-text z-plain"> versions["2003"] = versions.classic;
+</span><span class="z-text z-plain"> versions["2021"] = versions.resurrections;
+</span><span class="z-text z-plain"> 
+</span><span class="z-text z-plain">-const range = (f, min = -Infinity, max = Infinity) => Math.max(min, Math.min(max, f));
+</span><span class="z-text z-plain">+const range = (f, min = -Infinity, max = Infinity) =>
+</span><span class="z-text z-plain">+  Math.max(min, Math.min(max, f));
+</span><span class="z-text z-plain"> const nullNaN = (f) => (isNaN(f) ? null : f);
+</span><span class="z-text z-plain">-const isTrue = (s) => s.toLowerCase().includes("true");
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-const parseColor = (isHSL) => (s) => ({
+</span><span class="z-text z-plain">-	space: isHSL ? "hsl" : "rgb",
+</span><span class="z-text z-plain">-	values: s.split(",").map(parseFloat),
+</span><span class="z-text z-plain">-});
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-const parseColors = (isHSL) => (s) => {
+</span><span class="z-text z-plain">-	const values = s.split(",").map(parseFloat);
+</span><span class="z-text z-plain">-	const space = isHSL ? "hsl" : "rgb";
+</span><span class="z-text z-plain">-	return Array(Math.floor(values.length / 3))
+</span><span class="z-text z-plain">-		.fill()
+</span><span class="z-text z-plain">-		.map((_, index) => ({
+</span><span class="z-text z-plain">-			space,
+</span><span class="z-text z-plain">-			values: values.slice(index * 3, (index + 1) * 3),
+</span><span class="z-text z-plain">-		}));
+</span><span class="z-text z-plain">-};
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-const parsePalette = (isHSL) => (s) => {
+</span><span class="z-text z-plain">-	const values = s.split(",").map(parseFloat);
+</span><span class="z-text z-plain">-	const space = isHSL ? "hsl" : "rgb";
+</span><span class="z-text z-plain">-	return Array(Math.floor(values.length / 4))
+</span><span class="z-text z-plain">-		.fill()
+</span><span class="z-text z-plain">-		.map((_, index) => {
+</span><span class="z-text z-plain">-			const colorValues = values.slice(index * 4, (index + 1) * 4);
+</span><span class="z-text z-plain">-			return {
+</span><span class="z-text z-plain">-				color: {
+</span><span class="z-text z-plain">-					space,
+</span><span class="z-text z-plain">-					values: colorValues.slice(0, 3),
+</span><span class="z-text z-plain">-				},
+</span><span class="z-text z-plain">-				at: colorValues[3],
+</span><span class="z-text z-plain">-			};
+</span><span class="z-text z-plain">-		});
+</span><span class="z-text z-plain">-};
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-const paramMapping = {
+</span><span class="z-text z-plain">-	testFix: { key: "testFix", parser: (s) => s },
+</span><span class="z-text z-plain">-	version: { key: "version", parser: (s) => s },
+</span><span class="z-text z-plain">-	font: { key: "font", parser: (s) => s },
+</span><span class="z-text z-plain">-	effect: { key: "effect", parser: (s) => s },
+</span><span class="z-text z-plain">-	camera: { key: "useCamera", parser: isTrue },
+</span><span class="z-text z-plain">-	numColumns: { key: "numColumns", parser: (s) => nullNaN(parseInt(s)) },
+</span><span class="z-text z-plain">-	density: { key: "density", parser: (s) => nullNaN(range(parseFloat(s), 0)) },
+</span><span class="z-text z-plain">-	resolution: { key: "resolution", parser: (s) => nullNaN(parseFloat(s)) },
+</span><span class="z-text z-plain">-	animationSpeed: {
+</span><span class="z-text z-plain">-		key: "animationSpeed",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(parseFloat(s)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	forwardSpeed: {
+</span><span class="z-text z-plain">-		key: "forwardSpeed",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(parseFloat(s)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	cycleSpeed: { key: "cycleSpeed", parser: (s) => nullNaN(parseFloat(s)) },
+</span><span class="z-text z-plain">-	fallSpeed: { key: "fallSpeed", parser: (s) => nullNaN(parseFloat(s)) },
+</span><span class="z-text z-plain">-	raindropLength: {
+</span><span class="z-text z-plain">-		key: "raindropLength",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(parseFloat(s)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	slant: {
+</span><span class="z-text z-plain">-		key: "slant",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN((parseFloat(s) * Math.PI) / 180),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	bloomSize: {
+</span><span class="z-text z-plain">-		key: "bloomSize",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, 1)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	bloomStrength: {
+</span><span class="z-text z-plain">-		key: "bloomStrength",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, 1)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	ditherMagnitude: {
+</span><span class="z-text z-plain">-		key: "ditherMagnitude",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, 1)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	url: { key: "bgURL", parser: (s) => s },
+</span><span class="z-text z-plain">-	palette: { key: "palette", parser: parsePalette(false) },
+</span><span class="z-text z-plain">-	stripeColors: { key: "stripeColors", parser: parseColors(false) },
+</span><span class="z-text z-plain">-	backgroundColor: { key: "backgroundColor", parser: parseColor(false) },
+</span><span class="z-text z-plain">-	cursorColor: { key: "cursorColor", parser: parseColor(false) },
+</span><span class="z-text z-plain">-	glintColor: { key: "glintColor", parser: parseColor(false) },
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	paletteHSL: { key: "palette", parser: parsePalette(true) },
+</span><span class="z-text z-plain">-	stripeHSL: { key: "stripeColors", parser: parseColors(true) },
+</span><span class="z-text z-plain">-	backgroundHSL: { key: "backgroundColor", parser: parseColor(true) },
+</span><span class="z-text z-plain">-	cursorHSL: { key: "cursorColor", parser: parseColor(true) },
+</span><span class="z-text z-plain">-	glintHSL: { key: "glintColor", parser: parseColor(true) },
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	cursorIntensity: {
+</span><span class="z-text z-plain">-		key: "cursorIntensity",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, Infinity)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	glyphIntensity: {
+</span><span class="z-text z-plain">-		key: "glyphIntensity",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, Infinity)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	volumetric: { key: "volumetric", parser: isTrue },
+</span><span class="z-text z-plain">-	glyphFlip: { key: "glyphFlip", parser: isTrue },
+</span><span class="z-text z-plain">-	glyphRotation: {
+</span><span class="z-text z-plain">-		key: "glyphRotation",
+</span><span class="z-text z-plain">-		parser: (s) => nullNaN(range(parseFloat(s), 0, Infinity)),
+</span><span class="z-text z-plain">-	},
+</span><span class="z-text z-plain">-	loops: { key: "loops", parser: isTrue },
+</span><span class="z-text z-plain">-	fps: { key: "fps", parser: (s) => nullNaN(range(parseFloat(s), 0, 60)) },
+</span><span class="z-text z-plain">-	skipIntro: { key: "skipIntro", parser: isTrue },
+</span><span class="z-text z-plain">-	renderer: { key: "renderer", parser: (s) => s },
+</span><span class="z-text z-plain">-	suppressWarnings: { key: "suppressWarnings", parser: isTrue },
+</span><span class="z-text z-plain">-	once: { key: "once", parser: isTrue },
+</span><span class="z-text z-plain">-	isometric: { key: "isometric", parser: isTrue },
+</span><span class="z-text z-plain">-};
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-paramMapping.paletteRGB = paramMapping.palette;
+</span><span class="z-text z-plain">-paramMapping.stripeRGB = paramMapping.stripeColors;
+</span><span class="z-text z-plain">-paramMapping.backgroundRGB = paramMapping.backgroundColor;
+</span><span class="z-text z-plain">-paramMapping.cursorRGB = paramMapping.cursorColor;
+</span><span class="z-text z-plain">-paramMapping.glintRGB = paramMapping.glintColor;
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-paramMapping.width = paramMapping.numColumns;
+</span><span class="z-text z-plain">-paramMapping.dropLength = paramMapping.raindropLength;
+</span><span class="z-text z-plain">-paramMapping.angle = paramMapping.slant;
+</span><span class="z-text z-plain">-paramMapping.colors = paramMapping.stripeColors;
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-export default (urlParams) => {
+</span><span class="z-text z-plain">-	const validParams = Object.fromEntries(
+</span><span class="z-text z-plain">-		Object.entries(urlParams)
+</span><span class="z-text z-plain">-			.filter(([key]) => key in paramMapping)
+</span><span class="z-text z-plain">-			.map(([key, value]) => [paramMapping[key].key, paramMapping[key].parser(value)])
+</span><span class="z-text z-plain">-			.filter(([_, value]) => value != null),
+</span><span class="z-text z-plain">-	);
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-	if (validParams.effect != null) {
+</span><span class="z-text z-plain">-		if (validParams.cursorColor == null) {
+</span><span class="z-text z-plain">-			validParams.cursorColor = hsl(0, 0, 1);
+</span><span class="z-text z-plain">-		}
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-		if (validParams.cursorIntensity == null) {
+</span><span class="z-text z-plain">-			validParams.cursorIntensity = 2;
+</span><span class="z-text z-plain">-		}
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-		if (validParams.glintColor == null) {
+</span><span class="z-text z-plain">-			validParams.glintColor = hsl(0, 0, 1);
+</span><span class="z-text z-plain">-		}
+</span><span class="z-text z-plain">-
+</span><span class="z-text z-plain">-		if (validParams.glyphIntensity == null) {
+</span><span class="z-text z-plain">-			validParams.glyphIntensity = 1;
+</span><span class="z-text z-plain">-		}
+</span><span class="z-text z-plain">-	}
+</span><span class="z-text z-plain"> 
+</span><span class="z-text z-plain">-	const version = validParams.version in versions ? versions[validParams.version] : versions.classic;
+</span><span class="z-text z-plain">-	const fontName = [validParams.font, version.font, defaults.font].find((name) => name in fonts);
+</span><span class="z-text z-plain">+export default () => {
+</span><span class="z-text z-plain">+  const version = versions.classic;
+</span><span class="z-text z-plain">+  const fontName = [version.font, defaults.font].find((name) => name in fonts);
+</span><span class="z-text z-plain"> 	const font = fonts[fontName];
+</span><span class="z-text z-plain"> 
+</span><span class="z-text z-plain">-	const baseTextureURL = textureURLs[[version.baseTexture, defaults.baseTexture].find((name) => name in textureURLs)];
+</span><span class="z-text z-plain">+  const baseTextureURL =
+</span><span class="z-text z-plain">+    textureURLs[
+</span><span class="z-text z-plain">+      [version.baseTexture, defaults.baseTexture].find(
+</span><span class="z-text z-plain">+        (name) => name in textureURLs
+</span><span class="z-text z-plain">+      )
+</span><span class="z-text z-plain">+    ];
+</span><span class="z-text z-plain"> 	const hasBaseTexture = baseTextureURL != null;
+</span><span class="z-text z-plain">-	const glintTextureURL = textureURLs[[version.glintTexture, defaults.glintTexture].find((name) => name in textureURLs)];
+</span><span class="z-text z-plain">+  const glintTextureURL =
+</span><span class="z-text z-plain">+    textureURLs[
+</span><span class="z-text z-plain">+      [version.glintTexture, defaults.glintTexture].find(
+</span><span class="z-text z-plain">+        (name) => name in textureURLs
+</span><span class="z-text z-plain">+      )
+</span><span class="z-text z-plain">+    ];
+</span><span class="z-text z-plain"> 	const hasGlintTexture = glintTextureURL != null;
+</span><span class="z-text z-plain"> 
+</span><span class="z-text z-plain"> 	const config = {
+</span><span class="z-text z-plain"> 		...defaults,
+</span><span class="z-text z-plain"> 		...version,
+</span><span class="z-text z-plain"> 		...font,
+</span><span class="z-text z-plain">-		...validParams,
+</span><span class="z-text z-plain"> 		baseTextureURL,
+</span><span class="z-text z-plain"> 		glintTextureURL,
+</span><span class="z-text z-plain"> 		hasBaseTexture,
+</span><span class="z-text z-plain">Only in .: lib
+</span><span class="z-text z-plain">Only in ../../matrix-code-github/js/: webgpu
+</span></code></pre></article></div></main><div class="bg-secondary text-primary-foreground w-fit fixed bottom-4 float-right right-8 transition-all duration-200 opacity-0" title="Scroll to top" id=scroll-to-top><div class="bg-primary h-full absolute -z-10" id=scroll-fill></div><svg class="h-6 w-6 mx-4 md:my-2 my-1 fill-primary-foreground" viewbox="0 0 16 16" xmlns=http://www.w3.org/2000/svg><path d="M3.47 7.78a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0l4.25 4.25a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018L9 4.81v7.44a.75.75 0 0 1-1.5 0V4.81L4.53 7.78a.75.75 0 0 1-1.06 0Z"></path></svg></div>

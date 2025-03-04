@@ -4,8 +4,667 @@
     <link rel="self" type="application/atom+xml" href="https://cestef.github.io/yctf.ch/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-11-04T00:00:00+00:00</updated>
+    <updated>2024-09-30T00:00:00+00:00</updated>
     <id>https://cestef.github.io/yctf.ch/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Baby Buffer Overflow - 32bit</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/baby-buffer-overflow-32bit/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/baby-buffer-overflow-32bit/</id>
+        
+        <summary>Can you command this program to where it cannot go?
+To get the flag, you must somehow take control of its excecution.
+Is it even possible?</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Backdoored Splunk II</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/backdoored-splunk-ii/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/backdoored-splunk-ii/</id>
+        
+        <summary>You&#x27;ve probably seen Splunk being used for good, but have you seen it used for evil?  
+  
+**NOTE: the focus of this challenge should be on the downloadable file below. It uses the dynamic service that is started, but you must put the puzzle pieces together to be retrieve the flag.**  
+  
+**Download the file(s) below and press the `Start` button on the top-right to begin this challenge.**</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Base-p-</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/base-p/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/base-p/</id>
+        
+        <summary>That looks like a weird encoding, I wonder what it&#x27;s based on.
+
+Download the file(s) below. </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Discount Programming Devices</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/discount-programming-devices/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/discount-programming-devices/</id>
+        
+        <summary>I used a tool on the internet to obfuscate my script!
+But I lost it, and I don&#x27;t know how to get it back.
+Maybe you can help?</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Echo Chamber</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/echo-chamber/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/echo-chamber/</id>
+        
+        <summary>Is anyone there? Is anyone there? I&#x27;m sending myself the flag! I&#x27;m sending myself the flag! </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Finder&#x27;s Fee</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            mango
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/finder-s-fee/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/finder-s-fee/</id>
+        
+        <summary>You gotta make sure the people who find stuff for you are rewarded well!
+
+Escalate your privileges and uncover the flag.txt in the finder user&#x27;s home directory.
+
+Press the Start button in the top-right to begin this challenge.
+Connect with:
+
+# Password is &quot;userpass&quot;
+ssh -p 30668 user@challenge.ctf.games</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>GoCrackMe1</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme1/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme1/</id>
+        
+        <summary>TENNNNNN-HUT!
+
+Welcome to the Go Dojo, gophers in training!
+
+Go malware is on the rise. So we need you to sharpen up those Go reverse engineering skills. We&#x27;ve written three simple CrackMe programs in Go to turn you into Go-binary reverse engineering ninjas!
+
+First up is the easiest of the three. Go get em! </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>GoCrackMe2</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            mango
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/</id>
+        
+        <summary>Not bad gophers, but that one was the easiest of the three! How will you do against something a little more involved? I wouldn&#x27;t expect to get any help from debugging symbols on this one... </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>GoCrackMe3</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme3/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme3/</id>
+        
+        <summary>You&#x27;ve trained, you&#x27;ve failed, you&#x27;ve succeeded, you&#x27;ve learned. Everything you&#x27;ve done up to this point has prepared you for this moment. Don&#x27;t let me down, Gopher. Don&#x27;t let me down.</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Little Shop of Hashes</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/</id>
+        
+        <summary>In the packet, secrets lie,
+Whispers of data pass by,
+Encrypted shadows creep,
+While the watchful eyes peep.
+
+Are you able to unravel the attack chain? The first question is:
+What is the name of the service that the attacker ran and stopped, which dumped hashes on the first compromised host?</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Malibu</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/malibu/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/malibu/</id>
+        
+        <summary>What do you bring to the beach?</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Mimi</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            mango
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            Ary.eth
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/mimi/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/mimi/</id>
+        
+        <summary>Uh oh! Mimi forgot her password for her Windows laptop!
+
+Luckily, she dumped one of the crucial processes running on her computer (don&#x27;t ask me why, okay)... can you help her recover her password?
+
+NOTE: Archive password is mimi</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Mystery</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Ary.eth
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/mystery/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/mystery/</id>
+        
+        <summary>Someone sent this to me...
+such enigma, such mystery:
+
+rkenr wozec gtrfl obbur bfgma fkgyq ctkvq zeucz hlvwx yyzat zbvns kgyyd sthmi vsifc ovexl zzdqv slyir nwqoj igxuu kdqgr fdbbd njppc mujyy wwcoy
+
+Settings as below:
+
+    3 Rotor Model
+    Rotor 1: VI, Initial: A, Ring A
+    Rotor 2: I, Initial: Q, Ring A
+    Rotor 3: III, Initial L, Ring A
+    Reflector: UKW B
+    Plugboard: BQ CR DI EJ KW MT OS PX UZ GH
+
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>No need for Brutus</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Ary.eth
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/no-need-for-brutus/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/no-need-for-brutus/</id>
+        
+        <summary>Author: @aenygma
+
+A simple message for you to decipher:
+
+squiqhyiiycfbudeduutvehrhkjki
+
+Submit the original plaintext hashed with MD5, wrapped between the usual flag format: flag{}
+
+Ex: If the deciphered text is &quot;hello world&quot;, the MD5 hash would be 5eb63bbbe01eeed093cb22bb8f5acdc3, and the flag would be flag{5eb63bbbe01eeed093cb22bb8f5acdc3}.</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Obfuscation Statoin</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/</id>
+        
+        <summary>You&#x27;ve reached the Obfuscation Station!
+Can you decode this PowerShell to find the flag? </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>OceanLocust</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            mango
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/oceanlocust/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/oceanlocust/</id>
+        
+        <summary>Wow-ee zow-ee!! Some advanced persistent threats have been doing some tricks with hiding payloads in image files!
+
+We thought we would try our hand at it too.
+
+NOTE: this challenge includes a debug build of the binary used to craft the image, as well as a release build... so you may choose to go an easier route or a harder route ;)</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>permission to proxy</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/</id>
+        
+        <summary>
+Where do we go from here?
+
+Escalate your privileges and find the flag in root&#x27;s home directory.
+
+Yes, the error message you see on startup is intentional. ;)</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>PillowFight</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/pillowfight/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/pillowfight/</id>
+        
+        <summary>PillowFight uses _**advanced AI&#x2F;MLRegressionLearning**_ to combine two images of your choosing  
+  
+*note to investors this is not techically true at the moment we&#x27;re using a python library but please give us money and we&#x27;ll deliver it we promise.  
+  
+**Press the `Start` button on the top-right to begin this challenge.**</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Plantopia</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/plantopia/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/plantopia/</id>
+        
+        <summary>Plantopia is our brand-new, cutting-edge plant care management website! Designed for hobbyists and professionals alike, it&#x27;s your one-stop shop for all plant care needs.  
+  
+Please perform a penetration test before our site launch and let us know if you find any issues.  
+  
+Username: `testuser`  
+Password: `testpassword`  
+  
+**Press the `Start` button on the top-right to begin this challenge.**</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Ran Somewhere</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Ary.eth
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/ran-somewhere/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/ran-somewhere/</id>
+        
+        <summary>Thanks for joining the help desk! Here&#x27;s your first ticket of the day; can you help the client out?
+
+NOTE, this challenge uses a non-standard flag format. Enter the human-readable name of the location. </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Russian Roulette</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/russian-roulette/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/russian-roulette/</id>
+        
+        <summary>My PowerShell has been acting really weird!! It takes a few seconds to start up, and sometimes it just crashes my computer!?!?! :(</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Rustline</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/rustline/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/rustline/</id>
+        
+        <summary>Jerry: A Redline Stealer.
+George: Written in Rust.
+Jerry: A Rusty Redline Stealer.
+George: A Rusty Redline Stealer, Jerry!
+
+We caught a Redline variant executing on an endpoint and intercepted the encrypted files as they traversed the edge proxy. Well, everything except for the flag.txt file (imagine that...). Any chance you could figure out how this thing works and recover the flag? NOTE: Archive password is rustline</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Strange Calc</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/strange-calc/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/strange-calc/</id>
+        
+        <summary>I got this new calculator app from my friend! But it&#x27;s really weird, for some reason it needs admin permissions to run??</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Strive Marish Leadman TypeCDR</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/strive-marish-leadman-typecdr/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/strive-marish-leadman-typecdr/</id>
+        
+        <summary>Looks like primo hex garbage.
+Maybe something went wrong?
+Can you make sense of it? </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>System Code</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            mango
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            Tyr
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/system-code/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/system-code/</id>
+        
+        <summary>Follow the white rabbit.
+
+NOTE: Bruteforce is permitted for this challenge instance if you feel it is necessary.
+
+Press the Start button on the top-right to begin this challenge. </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>The Void</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/the-void/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/the-void/</id>
+        
+        <summary>When you gaze long into the void, the void gazes also into you...</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Too Many Bits</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            Ary.eth
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/too-many-bits/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/too-many-bits/</id>
+        
+        <summary>Author: @JohnHammond
+
+What do all these ones and zero&#x27;s mean!?! We are in the Warmups category after all...
+
+01100110 01101100 01100001 01100111 01111011 01100100 00110000 00110001 00110100 00110111 00110001 00110111 00110000 00110010 01100001 00110001 00110000 00110001 00110011 00110100 01100011 01100100 01100001 01100100 00110001 01100100 01100100 01100100 01100101 00110000 00110110 00110110 00110111 00111000 01100110 00110010 01100110 01111101</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>TXT Message</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/txt-message/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/txt-message/</id>
+        
+        <summary>Hmmm, have you seen some of the strange DNS records for the ctf.games domain? One of them sure is odd... </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>X-RAY</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/x-ray/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/x-ray/</id>
+        
+        <summary>The SOC detected malware on a host, but antivirus already quarantined it... can you still make sense of what it does? </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Y2J</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            glys
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/y2j/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/y2j/</id>
+        
+        <summary>Everyone was so worried about Y2K, but apparently it was a typo all along!!
+
+The real world-ending fears were from Y2J! </summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zulu</title>
+        <published>2024-09-30T00:00:00+00:00</published>
+        <updated>2024-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/zulu/"/>
+        <id>https://cestef.github.io/yctf.ch/writeups/huntress/zulu/</id>
+        
+        <summary>Did you know that zulu is part of the phonetic alphabet?</summary>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Cake</title>
         <published>2023-11-04T00:00:00+00:00</published>
