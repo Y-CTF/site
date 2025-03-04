@@ -7,7 +7,25 @@
         <loc>https://cestef.github.io/yctf.ch/archive/</loc>
     </url>
     <url>
+        <loc>https://cestef.github.io/yctf.ch/categories/</loc>
+    </url>
+    <url>
+        <loc>https://cestef.github.io/yctf.ch/categories/crypto/</loc>
+    </url>
+    <url>
+        <loc>https://cestef.github.io/yctf.ch/categories/misc/</loc>
+    </url>
+    <url>
+        <loc>https://cestef.github.io/yctf.ch/categories/pwn/</loc>
+    </url>
+    <url>
+        <loc>https://cestef.github.io/yctf.ch/categories/reverse/</loc>
+    </url>
+    <url>
         <loc>https://cestef.github.io/yctf.ch/fr/</loc>
+    </url>
+    <url>
+        <loc>https://cestef.github.io/yctf.ch/fr/categories/</loc>
     </url>
     <url>
         <loc>https://cestef.github.io/yctf.ch/writeups/</loc>
