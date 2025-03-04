@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title></title>
+      <link>https://yctf.ch</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://yctf.ch/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 04 Nov 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Cake</title>
+          <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
+          <author>damien-maier</author>
+          <link>https://yctf.ch/writeups/black-alps/cake/</link>
+          <guid>https://yctf.ch/writeups/black-alps/cake/</guid>
+          <description xml:base="https://yctf.ch/writeups/black-alps/cake/"></description>
+      </item>
+      <item>
+          <title>Solar</title>
+          <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+          <author>david-pellissier</author>
+          <link>https://yctf.ch/writeups/tryhackme/solar/</link>
+          <guid>https://yctf.ch/writeups/tryhackme/solar/</guid>
+          <description xml:base="https://yctf.ch/writeups/tryhackme/solar/"></description>
+      </item>
+      <item>
+          <title>Defective RSA</title>
+          <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+          <author>leonard-besseau</author>
+          <link>https://yctf.ch/writeups/buckeye/defective-rsa/</link>
+          <guid>https://yctf.ch/writeups/buckeye/defective-rsa/</guid>
+          <description xml:base="https://yctf.ch/writeups/buckeye/defective-rsa/"></description>
+      </item>
+      <item>
+          <title>Elliptigo</title>
+          <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+          <author>leonard-besseau</author>
+          <link>https://yctf.ch/writeups/buckeye/elliptigo/</link>
+          <guid>https://yctf.ch/writeups/buckeye/elliptigo/</guid>
+          <description xml:base="https://yctf.ch/writeups/buckeye/elliptigo/"></description>
+      </item>
+      <item>
+          <title>Key Exchange</title>
+          <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+          <author>leonard-besseau</author>
+          <link>https://yctf.ch/writeups/buckeye/key-exchange/</link>
+          <guid>https://yctf.ch/writeups/buckeye/key-exchange/</guid>
+          <description xml:base="https://yctf.ch/writeups/buckeye/key-exchange/"></description>
+      </item>
+      <item>
+          <title>Keybase</title>
+          <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+          <author>carcajou</author>
+          <link>https://yctf.ch/writeups/crypto/keybase/</link>
+          <guid>https://yctf.ch/writeups/crypto/keybase/</guid>
+          <description xml:base="https://yctf.ch/writeups/crypto/keybase/"></description>
+      </item>
+      <item>
+          <title>Wolf</title>
+          <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+          <author>leonard-besseau</author>
+          <link>https://yctf.ch/writeups/crypto/wolf/</link>
+          <guid>https://yctf.ch/writeups/crypto/wolf/</guid>
+          <description xml:base="https://yctf.ch/writeups/crypto/wolf/"></description>
+      </item>
+      <item>
+          <title>Farm</title>
+          <pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+          <author>leonard-besseau</author>
+          <link>https://yctf.ch/writeups/crypto/farm/</link>
+          <guid>https://yctf.ch/writeups/crypto/farm/</guid>
+          <description xml:base="https://yctf.ch/writeups/crypto/farm/"></description>
+      </item>
+      <item>
+          <title>Baby</title>
+          <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+          <author>carcajou</author>
+          <link>https://yctf.ch/writeups/redpwn/baby/</link>
+          <guid>https://yctf.ch/writeups/redpwn/baby/</guid>
+          <description xml:base="https://yctf.ch/writeups/redpwn/baby/"></description>
+      </item>
+      <item>
+          <title>Bread-making</title>
+          <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+          <author>carcajou</author>
+          <link>https://yctf.ch/writeups/redpwn/bread-making/</link>
+          <guid>https://yctf.ch/writeups/redpwn/bread-making/</guid>
+          <description xml:base="https://yctf.ch/writeups/redpwn/bread-making/"></description>
+      </item>
+      <item>
+          <title>ret2the-unknown-rop</title>
+          <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+          <author>muristo</author>
+          <link>https://yctf.ch/writeups/redpwn/ret2the-unknown-rop/</link>
+          <guid>https://yctf.ch/writeups/redpwn/ret2the-unknown-rop/</guid>
+          <description xml:base="https://yctf.ch/writeups/redpwn/ret2the-unknown-rop/"></description>
+      </item>
+    </channel>
+</rss>
