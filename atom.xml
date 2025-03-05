@@ -72,9 +72,7 @@ Download the file(s) below. </summary>
         
         <author>
           <name>
-            
-              Unknown
-            
+            glys
           </name>
         </author>
         
@@ -192,31 +190,6 @@ First up is the easiest of the three. Go get em! </summary>
         
     </entry>
     <entry xml:lang="en">
-        <title>Little Shop of Hashes</title>
-        <published>2024-09-30T00:00:00+00:00</published>
-        <updated>2024-09-30T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/"/>
-        <id>https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/</id>
-        
-        <summary>In the packet, secrets lie,
-Whispers of data pass by,
-Encrypted shadows creep,
-While the watchful eyes peep.
-
-Are you able to unravel the attack chain? The first question is:
-What is the name of the service that the attacker ran and stopped, which dumped hashes on the first compromised host?</summary>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>Malibu</title>
         <published>2024-09-30T00:00:00+00:00</published>
         <updated>2024-09-30T00:00:00+00:00</updated>
@@ -314,26 +287,6 @@ squiqhyiiycfbudeduutvehrhkjki
 Submit the original plaintext hashed with MD5, wrapped between the usual flag format: flag{}
 
 Ex: If the deciphered text is &quot;hello world&quot;, the MD5 hash would be 5eb63bbbe01eeed093cb22bb8f5acdc3, and the flag would be flag{5eb63bbbe01eeed093cb22bb8f5acdc3}.</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Obfuscation Statoin</title>
-        <published>2024-09-30T00:00:00+00:00</published>
-        <updated>2024-09-30T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/"/>
-        <id>https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/</id>
-        
-        <summary>You&#x27;ve reached the Obfuscation Station!
-Can you decode this PowerShell to find the flag? </summary>
         
     </entry>
     <entry xml:lang="en">
@@ -558,9 +511,13 @@ Press the Start button on the top-right to begin this challenge. </summary>
         
         <author>
           <name>
-            
-              Unknown
-            
+            ary.eth
+          </name>
+        </author>
+        
+        <author>
+          <name>
+            mango
           </name>
         </author>
         
@@ -598,9 +555,7 @@ What do all these ones and zero&#x27;s mean!?! We are in the Warmups category af
         
         <author>
           <name>
-            
-              Unknown
-            
+            Unknown
           </name>
         </author>
         
@@ -644,25 +599,6 @@ What do all these ones and zero&#x27;s mean!?! We are in the Warmups category af
         <summary>Everyone was so worried about Y2K, but apparently it was a typo all along!!
 
 The real world-ending fears were from Y2J! </summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Zulu</title>
-        <published>2024-09-30T00:00:00+00:00</published>
-        <updated>2024-09-30T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/zulu/"/>
-        <id>https://cestef.github.io/yctf.ch/writeups/huntress/zulu/</id>
-        
-        <summary>Did you know that zulu is part of the phonetic alphabet?</summary>
         
     </entry>
     <entry xml:lang="en">

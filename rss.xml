@@ -43,7 +43,7 @@ Download the file(s) below. </description>
       <item>
           <title>Discount Programming Devices</title>
           <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>glys</author>
           <link>https://cestef.github.io/yctf.ch/writeups/huntress/discount-programming-devices/</link>
           <guid>https://cestef.github.io/yctf.ch/writeups/huntress/discount-programming-devices/</guid>
           <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/discount-programming-devices/">I used a tool on the internet to obfuscate my script!
@@ -105,20 +105,6 @@ First up is the easiest of the three. Go get em! </description>
           <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme3/">You&#x27;ve trained, you&#x27;ve failed, you&#x27;ve succeeded, you&#x27;ve learned. Everything you&#x27;ve done up to this point has prepared you for this moment. Don&#x27;t let me down, Gopher. Don&#x27;t let me down.</description>
       </item>
       <item>
-          <title>Little Shop of Hashes</title>
-          <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/</link>
-          <guid>https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/</guid>
-          <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/little-shop-of-hashes/">In the packet, secrets lie,
-Whispers of data pass by,
-Encrypted shadows creep,
-While the watchful eyes peep.
-
-Are you able to unravel the attack chain? The first question is:
-What is the name of the service that the attacker ran and stopped, which dumped hashes on the first compromised host?</description>
-      </item>
-      <item>
           <title>Malibu</title>
           <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
           <author>cstef</author>
@@ -175,15 +161,6 @@ squiqhyiiycfbudeduutvehrhkjki
 Submit the original plaintext hashed with MD5, wrapped between the usual flag format: flag{}
 
 Ex: If the deciphered text is &quot;hello world&quot;, the MD5 hash would be 5eb63bbbe01eeed093cb22bb8f5acdc3, and the flag would be flag{5eb63bbbe01eeed093cb22bb8f5acdc3}.</description>
-      </item>
-      <item>
-          <title>Obfuscation Statoin</title>
-          <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/</link>
-          <guid>https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/</guid>
-          <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/obfuscation-statoin/">You&#x27;ve reached the Obfuscation Station!
-Can you decode this PowerShell to find the flag? </description>
       </item>
       <item>
           <title>OceanLocust</title>
@@ -301,7 +278,7 @@ Press the Start button on the top-right to begin this challenge. </description>
       <item>
           <title>The Void</title>
           <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ary.eth</author>
           <link>https://cestef.github.io/yctf.ch/writeups/huntress/the-void/</link>
           <guid>https://cestef.github.io/yctf.ch/writeups/huntress/the-void/</guid>
           <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/the-void/">When you gaze long into the void, the void gazes also into you...</description>
@@ -343,14 +320,6 @@ What do all these ones and zero&#x27;s mean!?! We are in the Warmups category af
           <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/y2j/">Everyone was so worried about Y2K, but apparently it was a typo all along!!
 
 The real world-ending fears were from Y2J! </description>
-      </item>
-      <item>
-          <title>Zulu</title>
-          <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://cestef.github.io/yctf.ch/writeups/huntress/zulu/</link>
-          <guid>https://cestef.github.io/yctf.ch/writeups/huntress/zulu/</guid>
-          <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/zulu/">Did you know that zulu is part of the phonetic alphabet?</description>
       </item>
       <item>
           <title>Cake</title>
