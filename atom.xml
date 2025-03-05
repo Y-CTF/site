@@ -962,8 +962,7 @@ The real world-ending fears were from Y2J! </summary>
         <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/crypto/wolf/"/>
         <id>https://cestef.github.io/yctf.ch/writeups/crypto/wolf/</id>
         
-        <content type="html" xml:base="https://cestef.github.io/yctf.ch/writeups/crypto/wolf/">&lt;h1 id=&quot;crypto-ctf-2021-writeup-challenge-farm&quot;&gt;Crypto CTF 2021 Writeup Challenge Farm&lt;&#x2F;h1&gt;
-&lt;p&gt;&lt;strong&gt;Not solved during the CTF&lt;&#x2F;strong&gt; :(&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://cestef.github.io/yctf.ch/writeups/crypto/wolf/">&lt;p&gt;&lt;strong&gt;Not solved during the CTF&lt;&#x2F;strong&gt; :(&lt;&#x2F;p&gt;
 &lt;p&gt;For this task we are given the source code and an encryption oracle.&lt;&#x2F;p&gt;
 &lt;p&gt;So we can see that the encryption use GCM and that the password is hard-coded. The message are encrypted with the following structure (HEADER|MESSAGE|PADDING)&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;2&#x2F;25&#x2F;GCM-Galois_Counter_Mode_with_IV.svg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
