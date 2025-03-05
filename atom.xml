@@ -118,6 +118,12 @@ Maybe you can help?</summary>
           </name>
         </author>
         
+        <author>
+          <name>
+            cstef
+          </name>
+        </author>
+        
         <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/finder-s-fee/"/>
         <id>https://cestef.github.io/yctf.ch/writeups/huntress/finder-s-fee/</id>
         
@@ -153,23 +159,6 @@ Welcome to the Go Dojo, gophers in training!
 Go malware is on the rise. So we need you to sharpen up those Go reverse engineering skills. We&#x27;ve written three simple CrackMe programs in Go to turn you into Go-binary reverse engineering ninjas!
 
 First up is the easiest of the three. Go get em! </summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>GoCrackMe2</title>
-        <published>2024-09-30T00:00:00+00:00</published>
-        <updated>2024-09-30T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            mango
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/"/>
-        <id>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/</id>
-        
-        <summary>Not bad gophers, but that one was the easiest of the three! How will you do against something a little more involved? I wouldn&#x27;t expect to get any help from debugging symbols on this one... </summary>
         
     </entry>
     <entry xml:lang="en">
@@ -308,28 +297,6 @@ Ex: If the deciphered text is &quot;hello world&quot;, the MD5 hash would be 5eb
 We thought we would try our hand at it too.
 
 NOTE: this challenge includes a debug build of the binary used to craft the image, as well as a release build... so you may choose to go an easier route or a harder route ;)</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>permission to proxy</title>
-        <published>2024-09-30T00:00:00+00:00</published>
-        <updated>2024-09-30T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            glys
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/"/>
-        <id>https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/</id>
-        
-        <summary>
-Where do we go from here?
-
-Escalate your privileges and find the flag in root&#x27;s home directory.
-
-Yes, the error message you see on startup is intentional. ;)</summary>
         
     </entry>
     <entry xml:lang="en">

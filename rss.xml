@@ -89,14 +89,6 @@ Go malware is on the rise. So we need you to sharpen up those Go reverse enginee
 First up is the easiest of the three. Go get em! </description>
       </item>
       <item>
-          <title>GoCrackMe2</title>
-          <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>mango</author>
-          <link>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/</link>
-          <guid>https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/</guid>
-          <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/gocrackme2/">Not bad gophers, but that one was the easiest of the three! How will you do against something a little more involved? I wouldn&#x27;t expect to get any help from debugging symbols on this one... </description>
-      </item>
-      <item>
           <title>GoCrackMe3</title>
           <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
           <author>cstef</author>
@@ -173,19 +165,6 @@ Ex: If the deciphered text is &quot;hello world&quot;, the MD5 hash would be 5eb
 We thought we would try our hand at it too.
 
 NOTE: this challenge includes a debug build of the binary used to craft the image, as well as a release build... so you may choose to go an easier route or a harder route ;)</description>
-      </item>
-      <item>
-          <title>permission to proxy</title>
-          <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
-          <author>glys</author>
-          <link>https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/</link>
-          <guid>https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/</guid>
-          <description xml:base="https://cestef.github.io/yctf.ch/writeups/huntress/permission-to-proxy/">
-Where do we go from here?
-
-Escalate your privileges and find the flag in root&#x27;s home directory.
-
-Yes, the error message you see on startup is intentional. ;)</description>
       </item>
       <item>
           <title>PillowFight</title>
