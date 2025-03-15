@@ -7,7 +7,15 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://cestef.github.io/yctf.ch/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Mon, 30 Sep 2024 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>FROSTies</title>
+          <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+          <author>cstef</author>
+          <link>https://cestef.github.io/yctf.ch/writeups/insomnihack/frosties/</link>
+          <guid>https://cestef.github.io/yctf.ch/writeups/insomnihack/frosties/</guid>
+          <description xml:base="https://cestef.github.io/yctf.ch/writeups/insomnihack/frosties/"></description>
+      </item>
       <item>
           <title>Baby Buffer Overflow - 32bit</title>
           <pubDate>Mon, 30 Sep 2024 00:00:00 +0000</pubDate>
