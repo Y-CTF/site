@@ -1,5 +1,5 @@
 use frost_core::compute_lagrange_coefficient;
-use frost_secp256k1::{, Ide, Identifier, SigningKey
+use frost_secp256k1::{
     self, 
     Identifier, 
     SigningKey, 
@@ -50,8 +50,7 @@ fn main() {
         // interpolate for f_i(0)
         let mut participant_secret = k256::Scalar::ZERO;
         for (id, share) in participant_shares {
-            let lagrange = 
-                compute_lagrange_coefficient(&points, None, id).unwrap();
+            let lagrange = compute_lagrange_coefficient(&points, None, id).unwrap();
             participant_secret += lagrange * share;
         }
 
