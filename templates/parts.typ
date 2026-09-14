@@ -107,9 +107,14 @@
 // The page a writeup sits under, which is the competition it was solved at. It is
 // the entry whose url is this one's parent, so it comes from the tree rather than
 // from anything a writeup has to remember to declare.
-#let event-of(entry, lang) = {
+//
+// It looks the parent up beside the entry rather than in the reader's language:
+// a French reader is shown the English writeups, because that is what `solved`
+// falls back to, and their competition pages are English too. Asking for the
+// French edition of a page nobody translated left every row without its name.
+#let event-of(entry) = {
   let parent = entry.url.split("/").slice(0, -2).join("/") + "/"
-  let above = pages(lang).filter(one => one.url == parent)
+  let above = pages(entry.lang).filter(one => one.url == parent)
   if above.len() > 0 { above.first() } else { none }
 }
 

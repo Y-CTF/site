@@ -37,7 +37,7 @@
   h("ul", for entry in recent.slice(0, calc.min(RECENT, recent.len())) {
     h("li", h("h3", class: "flex items-center gap-2 md:gap-4 !mt-4 !text-xl", {
       // Which competition it was, from the page above it in the tree.
-      let ctf = event-of(entry, page.lang)
+      let ctf = event-of(entry)
       if ctf != none {
         h("span", class: "font-normal hidden sm:block", h(
           "a",
