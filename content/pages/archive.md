@@ -1,5 +1,5 @@
 +++
 title = "Archive"
-template = "list.typ"
+template = "archive.typ"
 translation = "archive"
 +++
