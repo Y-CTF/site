@@ -4,7 +4,6 @@ description = "Author: @aenygma\n\nA simple message for you to decipher:\n\nsqui
 authors = ["Ary.eth"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["crypto"]
 +++
 

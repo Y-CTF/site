@@ -1,6 +1,7 @@
 +++
 title = "Committee"
-path = "committee"
+translation = "committee"
+slug = "committee"
 +++
 
 Our committee is composed of volunteer students and an assistant (since September 2024).

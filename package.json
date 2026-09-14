@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "css:dev": "pnpm tailwindcss -i ./styles/main.css -o ./static/css/main.css --watch -m",
-        "css:build": "pnpm tailwindcss -i ./styles/main.css -o ./static/css/main.css -m",
+        "css:dev": "pnpm tailwindcss -i ./styles/main.css -o ./assets/css/main.css --watch -m",
+        "css:build": "pnpm tailwindcss -i ./styles/main.css -o ./assets/css/main.css -m",
         "zola:dev": "zola serve --fast",
         "zola:dev-local": "../zola/target/debug/zola serve",
         "zola:build": "zola build",

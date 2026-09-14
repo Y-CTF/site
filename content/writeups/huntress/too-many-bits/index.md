@@ -4,7 +4,6 @@ description = "Author: @JohnHammond\n\nWhat do all these ones and zero's mean!?!
 authors = ["Ary.eth"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["warmups"]
 +++
 

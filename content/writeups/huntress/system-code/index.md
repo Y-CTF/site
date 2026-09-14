@@ -4,7 +4,6 @@ description = "Follow the white rabbit.\n\nNOTE: Bruteforce is permitted for thi
 authors = ["mango", "cstef", "Tyr"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["misc"]
 +++
 

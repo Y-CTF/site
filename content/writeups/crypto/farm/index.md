@@ -3,7 +3,6 @@ title = "Farm"
 authors = ["leonard-besseau"]
 date = 2021-08-01
 
-[taxonomies]
 categories = ["crypto"]
 +++
 

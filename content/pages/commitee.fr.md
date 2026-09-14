@@ -1,6 +1,7 @@
 +++
 title = "Comité"
-path = "fr/commitee"
+translation = "committee"
+slug = "committee"
 +++
 
 Notre comité est formé d’étudiants bénévoles et d’un assistant (depuis Septembre 2024).

@@ -4,7 +4,6 @@ description = "I got this new calculator app from my friend! But it's really wei
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["malware"]
 +++
 

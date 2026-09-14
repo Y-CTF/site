@@ -4,7 +4,6 @@ description = "Uh oh! Mimi forgot her password for her Windows laptop!\n\nLuckil
 authors = ["mango", "Ary.eth"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["warmups"]
 +++
 

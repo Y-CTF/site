@@ -4,7 +4,6 @@ description = "The SOC detected malware on a host, but antivirus already quarant
 authors = ["glys"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["malware", "reverse"]
 +++
 
@@ -72,10 +71,10 @@ which is a dll (.NET C#) implementation of pwncat-c2
 
 Loading it in ILSpy we find 2 methods that are not present in the github version:
 
-![](https://i.imgur.com/6W91oFi.png)
+![](6W91oFi.png)
 
 This is just a simple xor
 
-![](https://i.imgur.com/uB051qu.png)
+![](uB051qu.png)
 
 

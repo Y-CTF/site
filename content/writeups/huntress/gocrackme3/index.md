@@ -4,7 +4,6 @@ description = "You've trained, you've failed, you've succeeded, you've learned. 
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["reverse"]
 +++
 

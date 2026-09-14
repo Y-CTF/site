@@ -1,0 +1,144 @@
+// Y-CTF, on baudelaire.
+//
+// Ported from Zola. Two things are deliberately kept rather than rewritten: the
+// stylesheet is Tailwind v4's CSS-first syntax (`@theme`, `@plugin`), which the
+// built-in encre-css does not speak, and `@tailwindcss/typography` is what sets
+// every writeup. Both come from the `before` hook below, so this migration
+// changes how the site is *built* and not how it looks. Moving to the native
+// `assets { tailwind { } }` is a separate job with a visible diff.
+
+site "Y-CTF"
+url "https://yctf.ch"
+author "Y-CTF"
+lang "en"
+description "Capture the flag at HEIG-VD."
+
+paths {
+  content "content"
+  dist "public"
+  assets "assets"
+  templates "templates"
+  static "static"
+
+  // A page names a source, never a path, so these two lines are the only place
+  // the logos are reachable from. Both are inlined as SVG rather than linked:
+  // they are recoloured by the page's own theme.
+  sources {
+    logo "static/images/logo-red.svg"
+    banner "static/images/banner-red.svg"
+  }
+}
+
+languages {
+  // The default language states its table here too, so English is a row in the
+  // same place as French rather than a set of defaults scattered through the
+  // templates.
+  en {
+    name "English"
+    strings {
+      hero "We are a non-profit student association born in 2020 at HEIG-VD, Switzerland."
+      latest-writeups "Latest writeups"
+      rss-feed "Subscribe to RSS feed"
+      archive "View all posts"
+      footer "No rights reserved. Do whatever you want"
+      about "About"
+      events "Events"
+      commitee "Commitee"
+      inscription "Join us"
+      contact "Contact"
+      upcoming-events "Upcoming Events"
+      past-events "Past Events"
+      add-to-calendar "Add to Calendar"
+      download-ics "Download ICS"
+      learn-more "Learn More"
+      registration-deadline "Registration Deadline"
+      recurring "Recurring"
+      no-upcoming-events "No upcoming events"
+      no-events "No events"
+      languages "Languages"
+    }
+  }
+
+  fr {
+    name "Français"
+    site "Y-CTF"
+    strings {
+      hero "Nous sommes une association étudiante à but non lucratif née en 2020 à l'HEIG-VD, Suisse."
+      latest-writeups "Derniers writeups"
+      rss-feed "S'abonner au flux RSS"
+      archive "Voir tous les posts"
+      footer "Pas de droits réservés. Faites ce que vous voulez"
+      about "À propos"
+      events "Événements"
+      commitee "Comité"
+      inscription "Rejoins-nous"
+      contact "Contact"
+      upcoming-events "Événements à venir"
+      past-events "Événements passés"
+      add-to-calendar "Ajouter au calendrier"
+      download-ics "Télécharger ICS"
+      learn-more "En savoir plus"
+      registration-deadline "Date limite d'inscription"
+      recurring "Récurrent"
+      no-upcoming-events "Aucun événement à venir"
+      no-events "Aucun événement"
+      languages "Langues"
+      date "{day} {month} {year}"
+      months "janvier" "février" "mars" "avril" "mai" "juin" \
+             "juillet" "août" "septembre" "octobre" "novembre" "décembre"
+    }
+  }
+}
+
+content {
+  collections {
+    // The home page and anything else directly under `content/`.
+    _root { template "home.typ" }
+
+    // Everything under `pages/`: about, commitee, events, inscription.
+    pages "pages/**/*.md" { permalink "/{slug}/"; template "page.typ" }
+
+    // One writeup is `writeups/<ctf>/<challenge>/index.md`, a bundle with its
+    // own files beside it. Sorted by date because that is what a listing of
+    // solved challenges is read in.
+    writeups "writeups/**/*.md" {
+      sort "date"
+      reverse #true
+      template "post.typ"
+      paginate { template "list.typ"; size 20 }
+    }
+  }
+
+  taxonomies {
+    categories { listing { template "list.typ" } }
+  }
+}
+
+links { style "clean" }
+
+html {
+  pretty #true
+  meta #true
+  anchors #true
+}
+
+generate {
+  feed { formats "atom" "rss" }
+  search { }
+}
+
+generate {
+  feed { formats "atom" "rss" }
+  search { }
+}
+
+assets {
+  // Tailwind v4 and the typography plugin, from the toolchain that already
+  // builds this site. `assets/css/main.css` is what the hook writes and what
+  // the shell links.
+  bundle #true
+}
+
+hooks {
+  before "pnpm css:build"
+}

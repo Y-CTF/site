@@ -3,7 +3,6 @@ title = "Cake"
 authors = ["damien-maier"]
 date = 2023-11-04
 
-[taxonomies]
 categories = ["pwn"]
 +++
 

@@ -1,5 +1,5 @@
 +++
 title = "Archive"
-path = "archive"
-template = "archive.html"
+template = "list.typ"
+translation = "archive"
 +++

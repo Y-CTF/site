@@ -4,7 +4,6 @@ description = "Jerry: A Redline Stealer.\nGeorge: Written in Rust.\nJerry: A Rus
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["malware"]
 +++
 

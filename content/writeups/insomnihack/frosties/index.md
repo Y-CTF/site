@@ -3,7 +3,6 @@ title = "FROSTies"
 date = 2025-03-15
 authors = ["cstef"]
 
-[taxonomies]
 categories = ["crypto"]
 +++
 
@@ -91,7 +90,7 @@ $$
 
 - **FROST: Flexible Round-Optimized Schnorr Threshold Signatures**  
     Chelsea Komlo  
-    [eprint.iacr.org](https://eprint.iacr.org/2020/852.pdf?ref=glossary.blockstream.com) <small>PDF</small>
+    [eprint.iacr.org](https://eprint.iacr.org/2020/852.pdf?ref=glossary.blockstream.com) (PDF)
 
 - **Using ECC for (Multi-)Signatures**  
     cstef  

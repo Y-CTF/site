@@ -4,7 +4,6 @@ description = "My PowerShell has been acting really weird!! It takes a few secon
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["malware"]
 +++
 

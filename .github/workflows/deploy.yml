@@ -18,7 +18,7 @@ jobs:
 
             - uses: tecolicom/actions-use-homebrew-tools@v1
               with:
-                  tools: cestef/tap/zola svgo
+                  tools: cestef/tap/baudelaire svgo
 
             - name: Install pnpm
               uses: pnpm/action-setup@v4
@@ -31,20 +31,17 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: Cache Zola build
+            - name: Cache the incremental build
               uses: actions/cache@v3
               with:
                   path: |
-                      ~/.cache/zola
-                  key: ${{ runner.os }}-zola-${{ hashFiles('**/*.md', 'config.toml', 'templates/**/*') }}
+                      .baudelaire
+                  key: ${{ runner.os }}-baudelaire-${{ hashFiles('**/*.md', 'config.kdl', 'templates/**/*') }}
                   restore-keys: |
-                      ${{ runner.os }}-zola-
+                      ${{ runner.os }}-baudelaire-
 
-            - name: Build Tailwind CSS
-              run: pnpm run css:build
-
-            - name: Build Zola site
-              run: zola build
+            - name: Build the site
+              run: baudelaire build --strict
 
             - name: Display structure of built files
               run: ls -R public

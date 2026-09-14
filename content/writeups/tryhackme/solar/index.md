@@ -3,7 +3,6 @@ title = "Solar"
 authors = ["david-pellissier"]
 date = 2021-12-15
 
-[taxonomies]
 categories = ["misc"]
 +++
 

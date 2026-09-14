@@ -1,6 +1,6 @@
 +++
 title = "About us"
-path = "about"
+translation = "about"
 +++
 
 The Y-CTF club is a nonprofit student association founded in 2020 at HEIG-VD.  

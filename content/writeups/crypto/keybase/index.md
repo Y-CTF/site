@@ -3,7 +3,6 @@ title = "Keybase"
 authors = ["carcajou"]
 date = 2021-08-28
 
-[taxonomies]
 categories = ["crypto"]
 +++
 Ce challenge portait sur une attaque avec un Accès à un oracle de chiffrement sur AES-CBC.
@@ -40,4 +39,4 @@ Schéma simplifié du déchiffrement avec un message composé de 32 bytes nulls.
 - En orange foncé, ce qu'on connait
 - En clair, ce qu'on connait partiellement
 
-![cbc-aes-Page-3](cbc-aes-Page-3.png)
+![cbc-aes-Page-3](files/cbc-aes-Page-3.png)
