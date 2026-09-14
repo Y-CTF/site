@@ -2,8 +2,7 @@
 // most recently.
 
 #import "@baudelaire/html:0.1.0": h
-#import "@baudelaire/pages:0.1.0": pages
-#import "/templates/parts.typ": hero, pill, prose, say, subscribe
+#import "/templates/parts.typ": event-of, hero, pill, prose, say, solved, subscribe
 
 // How many writeups the front page carries before it becomes an archive.
 #let RECENT = 5
@@ -34,13 +33,25 @@
 
   h("h2", say(page, "latest-writeups"))
 
-  let solved = pages(page.lang).filter(one => one.collection == "writeups")
-  h("ul", for entry in solved.slice(0, calc.min(RECENT, solved.len())) {
+  let recent = solved(page.lang)
+  h("ul", for entry in recent.slice(0, calc.min(RECENT, recent.len())) {
     h("li", h("h3", class: "flex items-center gap-2 md:gap-4 !mt-4 !text-xl", {
+      // Which competition it was, from the page above it in the tree.
+      let ctf = event-of(entry, page.lang)
+      if ctf != none {
+        h("span", class: "font-normal hidden sm:block", h(
+          "a",
+          href: ctf.url,
+          class: "no-underline text-muted-foreground",
+          ctf.label + ":",
+        ))
+      }
       h("a", href: entry.url, class: "underline-offset-2 decoration-2 flex-grow", entry.label)
-      h("div", class: "flex flex-col items-center justify-center gap-y-2 gap-x-4", {
+      // A fixed column, so the dates line up down the page instead of tracking
+      // the length of each title.
+      h("div", class: "flex flex-col items-end justify-center gap-y-2 shrink-0 w-36", {
         if entry.at("date", default: none) != none {
-          h("span", class: "text-sm text-muted-foreground", entry.display)
+          h("span", class: "text-sm text-muted-foreground", entry.date)
         }
         // The first category only: the row is one line and a writeup may carry several.
         let terms = entry.at("taxonomies", default: (:)).at("categories", default: ())

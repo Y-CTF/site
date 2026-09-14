@@ -3,14 +3,13 @@
 // challenge actually wants.
 
 #import "@baudelaire/html:0.1.0": h
-#import "@baudelaire/pages:0.1.0": pages
-#import "/templates/parts.typ": pill, prose
+#import "/templates/parts.typ": pill, prose, solved
 
 #let archive(page, body) = prose(page, {
   h("h1", page.frontmatter.title)
   body
 
-  let solved = pages(page.lang).filter(one => one.collection == "writeups" and one.at("date", default: none) != none)
+  let solved = solved(page.lang).filter(one => one.at("date", default: none) != none)
 
   // `pages` is already newest first, so the years come out in order by grouping
   // in the order they are met rather than by sorting again.

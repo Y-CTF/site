@@ -16,7 +16,8 @@
 
   h("div", class: "flex flex-row gap-4 items-center flex-wrap", {
     if page.date != none {
-      h("span", h("strong", h("time", datetime: page.date.iso, page.date.display)))
+      // ISO, as the old site wrote it: these are dated records, not prose.
+      h("span", h("strong", h("time", datetime: page.date.iso, page.date.iso)))
     }
     h("span", class: "text-muted-foreground", "(" + str(page.reading.minutes) + " min. read)")
     h("span", class: "flex flex-row gap-2", for term in page.taxonomies.at("categories", default: ()) {
@@ -24,14 +25,18 @@
     })
   })
 
-  // A bundle's own files, offered plainly rather than behind a toggle: there is
-  // no script on this site, and a list of three filenames needs none.
+  body
+
+  // The files that came with the writeup, after it rather than before: the old
+  // site kept them behind a toggle that started closed, and `details` is the same
+  // thing without a script.
   let files = page.assets.pairs()
   if files.len() > 0 {
-    h("div", class: "flex flex-row gap-4 flex-wrap border border-muted px-2 py-1 my-4", {
-      for (name, url) in files { h("a", href: url, name) }
+    h("details", class: "not-prose my-6 text-sm", {
+      h("summary", class: "cursor-pointer text-muted-foreground", "Files")
+      h("div", class: "flex flex-row gap-4 flex-wrap mt-2", {
+        for (name, url) in files { h("a", href: url, name) }
+      })
     })
   }
-
-  body
 })

@@ -109,6 +109,10 @@ content {
     }
   }
 
+  // The writeups are full of it, and it is already Typst's own math syntax
+  // because the old generator typeset it with Typst too.
+  markdown { extensions "math" }
+
   taxonomies {
     categories { listing { template "list.typ" } }
   }

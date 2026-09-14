@@ -33,3 +33,9 @@
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+/* MathML sets noticeably smaller than the prose around it, and this page is
+   monospace, which makes the gap wider still. */
+math {
+	font-size: 1.15em;
+}
