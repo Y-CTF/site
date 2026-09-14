@@ -13,11 +13,12 @@ const hexToRgb = (h: string) => {
 
 export default {
 	darkMode: "class",
+	// Templates are Typst now, and a class name written in one is a string like any
+	// other. Content is scanned too: a class in a markdown page is still a class.
 	content: [
-		"./templates/**/*.html",
-		"./templates/*.html",
+		"./templates/**/*.typ",
+		"./content/**/*.md",
 		"./styles/**/*.css",
-		"./styles/*.css",
 	],
 	theme: {
 		extend: {
