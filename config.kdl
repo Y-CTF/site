@@ -56,6 +56,7 @@ languages {
       no-upcoming-events "No upcoming events"
       no-events "No events"
       languages "Languages"
+      join-note "We email you a link. A committee member lets you in, and then you can answer any event and ask for an invitation to the Telegram group."
     }
   }
 
@@ -86,6 +87,7 @@ languages {
       date "{day} {month} {year}"
       months "janvier" "février" "mars" "avril" "mai" "juin" \
              "juillet" "août" "septembre" "octobre" "novembre" "décembre"
+    join-note "On t’envoie un lien par e-mail. Un membre du comité te laisse entrer, puis tu peux répondre aux événements et demander une invitation au groupe Telegram."
     }
   }
 }
