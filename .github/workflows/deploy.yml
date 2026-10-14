@@ -1,74 +1,56 @@
-name: Build and Deploy to Github Pages
+name: Deploy
 
 on:
     push:
         branches:
             - main
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: pages
+    cancel-in-progress: false
+
 jobs:
-    build:
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - name: Set up Homebrew
-              id: set-up-homebrew
-              uses: Homebrew/actions/setup-homebrew@master
-
-            - uses: tecolicom/actions-use-homebrew-tools@v1
-              with:
-                  tools: cestef/tap/baudelaire svgo
-
-            - name: Install pnpm
-              uses: pnpm/action-setup@v4
-
-            - name: Use Node.js 20
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: "pnpm"
-            - name: Install dependencies
-              run: pnpm install
-
-            - name: Cache the incremental build
-              uses: actions/cache@v3
-              with:
-                  path: |
-                      .baudelaire
-                  key: ${{ runner.os }}-baudelaire-${{ hashFiles('**/*.md', 'config.kdl', 'templates/**/*') }}
-                  restore-keys: |
-                      ${{ runner.os }}-baudelaire-
-
-            - name: Build the site
-              run: baudelaire build --strict
-
-            - name: Display structure of built files
-              run: ls -R public
-
-            - name: Upload artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: site
-                  path: public
-
     deploy:
         runs-on: ubuntu-latest
-        needs: build
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
 
         steps:
-            - name: Download artifact
-              uses: actions/download-artifact@v4
+            - uses: actions/checkout@v7
               with:
-                  name: site
-                  path: public
-            - name: Display structure of downloaded files
-              run: ls -R public
+                  # The colophon names the tag the site was built from, and
+                  # `git describe` needs the history and the tags to find one.
+                  fetch-depth: 0
 
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v3
+            - uses: cargo-bins/cargo-binstall@v1.23.0
+            - run: cargo binstall -y baudelaire
+
+            - uses: pnpm/action-setup@v6
+            - uses: actions/setup-node@v7
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./public
-                  publish_branch: gh-pages
-                  #   cname: yctf.ch
+                  node-version: 22
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+
+            - name: Restore the incremental cache
+              uses: actions/cache@v6
+              with:
+                  path: .baudelaire
+                  key: baudelaire-${{ hashFiles('config.kdl', 'content/**', 'templates/**', 'styles/**') }}
+                  restore-keys: baudelaire-
+
+            - run: baudelaire build --strict
+
+            - uses: actions/upload-pages-artifact@v5
+              with:
+                  path: public
+
+            - id: deployment
+              uses: actions/deploy-pages@v5

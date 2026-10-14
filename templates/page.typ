@@ -1,4 +1,4 @@
-// An ordinary page: about, commitee, inscription. Title then words.
+// An ordinary page: about, committee, inscription. Title then words.
 
 #import "@baudelaire/html:0.1.0": h
 #import "/templates/parts.typ": prose

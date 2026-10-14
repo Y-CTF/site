@@ -7,7 +7,7 @@
 // by this site and no other.
 
 #import "@baudelaire/html:0.1.0": h
-#import "/templates/parts.typ": prose, say
+#import "/templates/parts.typ": cta, prose, say
 
 #let CLUB = "https://club.yctf.ch"
 // Tall enough for the five events the widget shows, on a phone.
@@ -26,5 +26,5 @@
     class: "w-full border-0 not-prose",
   )
 
-  h("p", h("a", href: CLUB + "/join", say(page, "inscription", fallback: "Join us")))
+  cta(CLUB + "/join", say(page, "inscription", fallback: "Join us"))
 })

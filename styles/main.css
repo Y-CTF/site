@@ -44,15 +44,57 @@ html {
 	scrollbar-color: var(--color-ring) rgba(0, 0, 0, 0);
 }
 
-html,
-body {
-	height: 100%;
-	overflow: hidden;
+/* The document scrolls, not a box inside it. It used to be the other way round,
+   to drive a progress bar and a scroll-to-top button from a script that is no
+   longer loaded, and the cost was paid on phones: an inner scroller keeps the
+   address bar from collapsing, breaks pull-to-refresh, and leaves `scroll(root)`
+   with nothing to measure. */
+html {
+	scroll-behavior: smooth;
+	/* An anchor lands below the bar rather than under it. */
+	scroll-padding-top: 6rem;
 }
 
-main {
-	max-height: 100svh;
-	overflow-y: auto;
+/* The bar over the page takes its background once the page has been scrolled at
+   all, so it reads over content and stays out of the way over the top of a page.
+   Scroll-driven, so it costs no script; where the browser has no scroll timeline
+   the bar simply stays transparent, which is what it was before. */
+@keyframes site-header-backdrop {
+	from {
+		background-color: transparent;
+		border-bottom-color: transparent;
+		-webkit-backdrop-filter: blur(0);
+		backdrop-filter: blur(0);
+	}
+
+	to {
+		background-color: hsl(var(--background) / 0.85);
+		border-bottom-color: hsl(var(--border));
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+	}
+}
+
+@supports (animation-timeline: scroll()) {
+	.site-header {
+		animation: site-header-backdrop linear both;
+		animation-timeline: scroll(root block);
+		animation-range: 0 4rem;
+	}
+}
+
+/* Anything that cannot wrap gets its own scrollbar rather than widening the
+   page: a phone-width reader should never scroll the article sideways to get
+   back to the words. */
+.prose pre,
+.prose table {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+.prose table {
+	display: block;
+	width: max-content;
 }
 
 .prose {
