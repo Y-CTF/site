@@ -4,7 +4,6 @@ description = "You gotta make sure the people who find stuff for you are rewarde
 authors = ["mango", "Tyr", "cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["warmups"]
 +++
 
@@ -42,7 +41,7 @@ However, the machine crashes consistently when running `linpeas.sh`. To avoid th
 
 Upon running this, we found a privilege escalation opportunity involving the `find` command, which has the `SGID` bit set with the user `finder`.
 
-![](https://i.imgur.com/bSv4Edv.png)
+![](bSv4Edv.png)
 
 Using this, we can read the `flag.txt` file with the following command:
 

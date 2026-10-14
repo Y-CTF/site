@@ -3,7 +3,6 @@ title = "Bread-making"
 date = 2021-07-27
 authors = ["carcajou"]
 
-[taxonomies]
 categories = ["reverse"]
 +++
 

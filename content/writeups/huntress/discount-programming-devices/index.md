@@ -4,7 +4,6 @@ description = "I used a tool on the internet to obfuscate my script!\nBut I lost
 authors = ["glys"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["malware"]
 +++
 

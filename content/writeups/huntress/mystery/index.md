@@ -4,7 +4,6 @@ description = "Someone sent this to me...\nsuch enigma, such mystery:\n\nrkenr w
 authors = ["Ary.eth"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["warmups"]
 +++
 

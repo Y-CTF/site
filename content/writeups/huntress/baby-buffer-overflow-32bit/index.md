@@ -4,7 +4,6 @@ description = "Can you command this program to where it cannot go?\nTo get the f
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["pwn"]
 +++
 

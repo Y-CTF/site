@@ -104,10 +104,8 @@
                     </pattern>
                 </defs>
                 <g class="fills" id="fills-7d103f36-f396-80db-8006-db36b9f1788a">
-                    <text x="73.5" y="203.5" dominant-baseline="ideographic" textLength="384"
-                        lengthAdjust="spacingAndGlyphs"
-                        style="text-transform: none; font-family: &quot;JetBrains Mono&quot;; letter-spacing: normal; font-style: normal; font-weight: 700; white-space: pre; font-size: 32px; text-decoration: none solid rgb(230, 62, 61); direction: ltr; fill: rgb(230, 62, 61); fill-opacity: 1;">student
-                        hacking club</text>
+                    <text x="73.5" y="203.5" dominant-baseline="ideographic"
+                        style="text-transform: none; font-family: &quot;JetBrains Mono&quot;; letter-spacing: normal; font-style: normal; font-weight: 700; white-space: pre; font-size: 32px; text-decoration: none solid rgb(230, 62, 61); direction: ltr; fill: rgb(230, 62, 61); fill-opacity: 1;">student hacking club</text>
                 </g>
             </g>
         </g>
@@ -126,9 +124,7 @@
                 </defs>
                 <g class="fills" id="fills-7d103f36-f396-80db-8006-db36b9f1788b">
                     <text x="192.3984375" y="171.20312500000045" dominant-baseline="ideographic"
-                        textLength="307.203125" lengthAdjust="spacingAndGlyphs"
-                        style="text-transform: none; font-family: &quot;JetBrains Mono&quot;; letter-spacing: normal; font-style: normal; font-weight: 700; white-space: pre; font-size: 128px; text-decoration: none solid rgb(230, 62, 61); direction: ltr; fill: rgb(230, 62, 61); fill-opacity: 1;">
-                        YCTF</text>
+                        style="text-transform: none; font-family: &quot;JetBrains Mono&quot;; letter-spacing: normal; font-style: normal; font-weight: 700; white-space: pre; font-size: 128px; text-decoration: none solid rgb(230, 62, 61); direction: ltr; fill: rgb(230, 62, 61); fill-opacity: 1;">YCTF</text>
                 </g>
             </g>
         </g>

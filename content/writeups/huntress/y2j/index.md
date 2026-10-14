@@ -4,7 +4,6 @@ description = "Everyone was so worried about Y2K, but apparently it was a typo a
 authors = ["glys"]
 date = 2024-09-30
 
-[taxonomies]
 categories = []
 +++
 
@@ -20,5 +19,5 @@ see
 https://book.hacktricks.xyz/pentesting-web/deserialization/python-yaml-deserialization
 
 figure out
-![](https://i.imgur.com/VVGI1O8.png)
+![](VVGI1O8.png)
 

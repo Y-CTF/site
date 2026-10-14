@@ -4,7 +4,6 @@ description = "Wow-ee zow-ee!! Some advanced persistent threats have been doing 
 authors = ["mango"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["reverse"]
 +++
 

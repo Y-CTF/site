@@ -4,7 +4,6 @@ description = "TENNNNNN-HUT!\n\nWelcome to the Go Dojo, gophers in training!\n\n
 authors = ["glys"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["reverse"]
 +++
 
@@ -47,7 +46,7 @@ But there is also this line:`
 
 So let's just breakpoint on this.
 
-![](https://i.imgur.com/Na5ybxH.png)
+![](Na5ybxH.png)
 
 Oh!
 Well that is done I guess?

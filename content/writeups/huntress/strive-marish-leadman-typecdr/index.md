@@ -4,7 +4,6 @@ description = "Looks like primo hex garbage.\nMaybe something went wrong?\nCan y
 authors = ["glys"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["crypto"]
 +++
 

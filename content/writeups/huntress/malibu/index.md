@@ -4,7 +4,6 @@ description = "What do you bring to the beach?"
 authors = ["cstef"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["misc"]
 +++
 

@@ -4,7 +4,6 @@ description = "Hmmm, have you seen some of the strange DNS records for the ctf.g
 authors = ["Unknown"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["warmups"]
 +++
 

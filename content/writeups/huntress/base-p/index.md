@@ -4,7 +4,6 @@ description = "That looks like a weird encoding, I wonder what it's based on.\n\
 authors = ["Tyr"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["misc"]
 +++
 
@@ -40,7 +39,7 @@ By inspecting the file type using the `file` command, we discover it is a compre
 ```bash
 file decoded_output
 ```
-![](https://i.imgur.com/ahgjWqZ.png)
+![](ahgjWqZ.png)
 
 Let's rename it with the `.gz` extension and decompress it:
 ```bash
@@ -49,11 +48,11 @@ gzip -d decoded_output.gz
 file decoded_output
 ```
 Now we have a PNG image file.
-![](https://i.imgur.com/s2kkQSH.png)
+![](s2kkQSH.png)
 
 
 Adding the `.png`extension, and here is what it looks like:
-![](https://i.imgur.com/aufYRcl.png)
+![](aufYRcl.png)
 
 By extracting the RGB values from each square (using an [online color picker](https://www.ginifab.com/feeds/pms/color_picker_from_image.php)), we obtain the following values:
 ```=

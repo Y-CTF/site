@@ -4,7 +4,6 @@ description = "Thanks for joining the help desk! Here's your first ticket of the
 authors = ["Ary.eth"]
 date = 2024-09-30
 
-[taxonomies]
 categories = ["osint"]
 +++
 
@@ -47,8 +46,8 @@ I am attaching those files so you can fix them.
  
  By appending the extension `.jfif`, we can then open thoses two files which seem to be images.
  
- ![](https://i.imgur.com/IhCzSiG.jpeg)
-![](https://i.imgur.com/pAAuzcb.jpeg)
+ ![](IhCzSiG.jpeg)
+![](pAAuzcb.jpeg)
 
  
  ### And for the .txt ?

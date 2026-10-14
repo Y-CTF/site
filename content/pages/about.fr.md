@@ -1,6 +1,6 @@
 +++
 title = "À propos de nous"
-path = "fr/about"
+translation = "about"
 +++
 
 Le club Y-CTF est une association étudiante à but non lucratif créée en 2020 au sein de la HEIG-VD.

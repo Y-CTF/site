@@ -1,11 +1,10 @@
 <p align="center">
-    <img src="static/images/banner_light.png#gh-light-mode-only" alt="Logo" height="200">
-    <img src="static/images/banner_dark.png#gh-dark-mode-only" alt="Logo" height="200">
+    <img src="static/images/banner-red.svg" alt="Y-CTF" height="200">
 </p>
 
---- 
+---
 
-Source code of the [yctf.ch](https://yctf.ch) website.
+Source code of the [yctf.ch](https://yctf.ch) website, built with [baudelaire](https://baudelaire.cstef.dev).
 
 ## Writing Content
 
@@ -43,17 +42,13 @@ title = "Challenge Name"
 date = 2021-01-01
 description = "Description of the challenge" # Optional
 authors = ["Author 1", "Author 2"] # Optional
-
-[taxonomies]
 categories = ["pwn"]
 +++
 ```
 
 ### Markdown
 
-The content is rendered using a fork of [Zola](https://github.com/cestef/zola). It supports the standard markdown syntax, as well as some custom stuff:
-
-- [`typst`](https://typst.app) math rendering
+Standard markdown, plus [`typst`](https://typst.app) math:
 
 ```markdown
 $$
@@ -61,46 +56,26 @@ lim_(x->oo) (1 + 1/x)^x = e
 $$
 ```
 
-- Obsdian-like callouts
-
-```markdown
-> [!NOTE]
-> This is a note
-```
-
-- Code block injection
-
-~~~markdown
-```python include=files/solution.py
-```
-~~~
-
-- Copy button
-
-~~~markdown
-```python copy
-print("Hello, world!")
-```
-~~~
+Templates in `templates/` are Typst too, and the site is configured in `config.kdl`.
 
 ## Development
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yctf/site.git
+git clone https://github.com/Y-CTF/site.git
 cd site
 ```
 
-2. Install Zola ([`brew`](https://brew.sh) or [`cargo`](https://rustup.rs))
+2. Install baudelaire ([`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) or [`cargo`](https://rustup.rs))
 
 ```bash
-brew install cestef/tap/zola
-# or with cargo
-cargo install --git https://github.com/cestef/zola
+cargo binstall baudelaire
+# or from source
+cargo install baudelaire
 ```
 
-<small>You can also download a pre-built binary from the [releases page](https://github.com/cestef/zola/releases).</small>
+<small>You can also download a pre-built binary from the [releases page](https://github.com/cestef/baudelaire/releases).</small>
 
 3. Install dependencies ([`pnpm`](https://pnpm.io))
 
@@ -114,19 +89,8 @@ pnpm install
 pnpm dev
 ```
 
-## Importing Writeups from [CTFNote](https://note.yctf.ch)
+Styles are Tailwind v4, compiled by the `before` hook in `config.kdl` on every build. To rebuild them on change while editing `styles/`, run `pnpm css:dev` alongside.
 
-A python script is provided to import writeups from a specific past CTF. It will download the writeups and format them into the correct structure.
+## Deployment
 
-### With [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
-
-```bash
-uv run scripts/import.py -c "ctf-name" -a "Bearer <token>" -o "content/writeups/<ctf-name>"
-```
-
-### With `python`
-
-```bash
-pip install requests tomlkit rich python_slugify
-python scripts/import.py -c "ctf-name" -a "Bearer <token>" -o "content/writeups/<ctf-name>"
-```
+Every push to `main` builds the site and publishes it to GitHub Pages, from `.github/workflows/deploy.yml`.
