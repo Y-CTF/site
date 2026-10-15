@@ -57,6 +57,8 @@ languages {
       recurring "Recurring"
       no-upcoming-events "No upcoming events"
       no-events "No events"
+      events-unavailable "The calendar could not be loaded."
+      until "until"
       languages "Languages"
     }
   }
@@ -88,6 +90,8 @@ languages {
       recurring "Récurrent"
       no-upcoming-events "Aucun événement à venir"
       no-events "Aucun événement"
+      events-unavailable "Le calendrier n'a pas pu être chargé."
+      until "jusqu'au"
       languages "Langues"
       date "{day} {month} {year}"
       months "janvier" "février" "mars" "avril" "mai" "juin" \
